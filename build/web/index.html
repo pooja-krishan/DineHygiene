@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylereg.css">
+        <title>Register</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <center>
+            <fieldset style="width:300px; height:400px;">
+                <form name="reg" onsubmit="validatePassword();" method="post" action="reg.jsp">
+                    <h2 style="color:#00ffff"> Sign Up </h2>
+                    <div class="gap">   </div>
+                    <p> <input type="text" id="fname" name="fname" required aria-required="true" autocomplete="off" placeholder="First Name"/> </p>
+                    <p> <input type="text" id="lname" name="lname" required aria-required="true" autocomplete="off" placeholder="Last Name"/> </p>
+                    <p> <input type="text" id="uname" name="uname" pattern=".{5,12}" required title="Error: Username must be between 5 to 12 characters" aria-required="true" autocomplete="off" placeholder="Username"/> </p>
+                    <p> <input type="password" id="p1" name="p1"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{5,12}$" required title="Error: Password must contain atleast one uppercase, lowercase, numeric and special characters" aria-required="true" placeholder="Enter password"/>
+                    <p> <input type="password" id="p2" name="p2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{5,12}$" required aria-required="true" placeholder="Reconfirm password"/>
+                    <p> <button class="modern" style="height:30px;width:150px;border-radius:20px/60px;background-image:linear-gradient(to right, rgba(188,98,223,1), rgba(94,40,253,1));color:white;"> Register </button> </p>
+                    <a href="login.jsp"> Already have an account? Sign in </a>
+                </form>
+            </fieldset>
+        </center>
+        <script>
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+        var re = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{5,12}$','g');
+        var teststr=p1.value.match(re);
+        console.log(teststr);
+        function validatePassword()
+        {
+            if(p1.value != p2.value)
+            {
+                p2.setCustomValidity("Passwords Don't Match");
+            }
+            else {
+            p2.setCustomValidity('');
+            }
+        }     
+        p1.onchange = validatePassword;
+        p2.onkeyup = validatePassword;
+        </script>
+    </body>
+</html>

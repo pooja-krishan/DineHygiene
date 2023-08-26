@@ -1,0 +1,21 @@
+.inline-link-1 {
+  display: inline-block;
+  margin: 0 0.2em;
+  padding: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-out;
+
+  /* Font styles */
+  text-decoration: none;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.inline-link-1:hover   { background: white }
+.inline-link-1:active  { background: white }
+.inline-link-1:visited { background: white }
+
+body{
+    background-image: linear-gradient(to right, rgba(62,209,231,1), rgba(169,143,245,1));
+}
