@@ -50,9 +50,7 @@ The proposed system offers several advantages:
 - **Database:** MySQL
 
 ## System Architecture Diagram
-
-(Insert system architecture diagram here)
+![System Architecture](https://github.com/pooja-krishan/DineHygiene/blob/main/system-architecture.PNG)
 
 ## UML Diagrams - Use Case
-
-(Insert UML use case diagram here)
+![Use Case](https://github.com/pooja-krishan/DineHygiene/blob/main/use-case.PNG)
